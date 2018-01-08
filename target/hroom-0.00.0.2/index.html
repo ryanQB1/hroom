@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>hroom</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+
+        <form name="loginForm">
+            <h3> Login here: </h3><br>
+            Username:<br>
+            <input type="text" name="username"><br>
+            Password:<br>
+            <input type="text" name="password"><br>
+            <input type="submit" value="Login!" onclick="sendLoginRequest(); return false;"><br>
+            <input type="submit" value="Create New Account" onclick="newAccountRequest(); return false;"><br>
+        </form>
+        <br>
+        <hr>
+        <textarea rows="2" cols="120" id="gentext" readonly="true"></textarea>
+        <br>
+        <hr>
+        <br>
+        <form name="orderForm">
+            <h3>Order here:</h3>
+            Date:
+            <input type="date" name="datum" value="0001-01-01" id="datum1"><br>
+            <input type="submit" value="Refresh" onclick="sendRefreshRequest(); return false;"><br>
+            <p hidden="true" id="admusinf"> select surrogate username here</p>
+            <input type="text" name="admus" id="admus" hidden="true"><br>
+            <hr>
+            <br>
+            <br>
+            <h3>Rooms available:</h3>
+            <table style="width:50%">
+                <tr>
+                    <th>Available Room1:</th>
+                    <th>Available Room2:</th>
+                    <th>Available Room3:</th>
+                </tr>
+                <tr>
+                    <td><textarea rows="1" cols="5" id="room1av" readonly="true"></textarea></td>
+                    <td><textarea rows="1" cols="5" id="room2av" readonly="true"></textarea></td>
+                    <td><textarea rows="1" cols="5" id="room3av" readonly="true"></textarea></td>
+                </tr>
+                <tr>
+                    <th>Rent Room1:</th>
+                    <th>Rent Room2:</th>
+                    <th>Rent Room3:</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="room1" id="room1my"></td>
+                    <td><input type="text" name="room2" id="room2my"></td>
+                    <td><input type="text" name="room3" id="room3my"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="Submit rent Rooms!" onclick="sendRentRequest(); return false;">
+        </form>
+        <script type="text/javascript" src="jshroom.js"></script>
+        <script type="text/javascript" src="websocket.js"></script>
+    </body>
+</html>
